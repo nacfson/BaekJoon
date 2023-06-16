@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <map>
+#include <unordered_map>
 
 using namespace std;
 int main(void) {
@@ -10,8 +11,8 @@ int main(void) {
 	cout.tie(NULL);
 
 	int count, problem;
-	map<string, int> pokemons;
-	map<int, string> pokemons2;
+	unordered_map<string, int> pokemons;
+	unordered_map<int, string> pokemons2;
 	cin >> count >> problem;
 	
 	for (int i = 0; i < count; i++) {
