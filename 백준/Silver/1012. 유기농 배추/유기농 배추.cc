@@ -4,8 +4,8 @@ using namespace std;
 int px[4]{ -1,1,0,0 };
 int py[4]{ 0,0,-1,1 };
 
-bool visited[100][100];
-int board[100][100];
+bool visited[50][50];
+int board[50][50];
 int t, m, n, k;
 
 void DFS(int x, int y){
@@ -27,14 +27,23 @@ int main(void) {
 		int answer = 0;
 		cin >> m >> n >> k;
 
-		fill_n(board[0], 100 * 100, 0);
-		fill_n(visited[0], 100 * 100, 0);
+		fill_n(board[0], 51 * 51, 0);
+		fill_n(visited[0], 51 * 51, 0);
 
-		for (int j = 0; j  < k; j++) {
+		for (int p = 0; p  < k; p++) {
 			int tmp1, tmp2;
 			cin >> tmp1 >> tmp2;
 			board[tmp1][tmp2] = 1;
 		}
+
+		//for (int p = 0; p < m; p++) {
+		//	for (int j = 0; j < n; j++) {
+		//		if (visited[p][j] == true || board[p][j] == 0) continue;
+		//		DFS(p, j);
+		//		++answer;
+		//	}
+		//}
+
 
 		for (int j = 0; j < m; j++) {
 			for (int k = 0; k < n; k++) {
